@@ -1,0 +1,119 @@
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* === VARIABLES DE COLOR (puedes personalizar) === */
+  :root {
+    --bg-color: #f5f7fa;
+    --card-color: #ffffff;
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --border-color: #ddd;
+    --text-color: #333;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+  }
+  
+  /* === BODY === */
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* === CONTENEDOR PRINCIPAL === */
+  .contenedor {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+  }
+  
+  /* === TÍTULO === */
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+  }
+  
+  /* === GRUPOS DE CAMPOS === */
+  .grupo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--text-color);
+  }
+  
+  input[type="file"],
+  input[type="text"],
+  select,
+  textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  /* === BOTONES === */
+  button {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  /* === ÁREA DE TEXTO DE RESULTADO === */
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    .contenedor {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

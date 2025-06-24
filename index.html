@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Encriptador de archivos con soporte para AES-256, Base64 y César. Seguro, rápido y fácil de usar." />
+  <title>🔐 Encriptador de Archivos</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/lock.svg" />
+
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="contenedor">
+    <h1>🔐 Encriptador de Archivos</h1>
+
+    <form id="form-encriptador" novalidate>
+      <!-- Selección de archivo -->
+      <fieldset class="grupo">
+        <label for="archivo">📁 Selecciona un archivo:</label>
+        <input type="file" id="archivo" accept=".txt,.json,.csv,.md,.xml,.js,.html,.css" required />
+      </fieldset>
+
+      <!-- Algoritmo de encriptación -->
+      <fieldset class="grupo">
+        <label for="algoritmo">🧠 Algoritmo:</label>
+        <select id="algoritmo" required>
+          <option value="aes">AES-256</option>
+          <option value="base64">Base64</option>
+          <option value="cesar">César</option>
+        </select>
+      </fieldset>
+
+      <!-- Clave -->
+      <fieldset class="grupo">
+        <label for="clave">🔑 Clave (si aplica):</label>
+        <input type="text" id="clave" placeholder="Clave o número de desplazamiento" />
+      </fieldset>
+
+      <!-- Modo -->
+      <fieldset class="grupo">
+        <label for="modo">⚙️ Modo:</label>
+        <select id="modo" required>
+          <option value="encriptar">Encriptar</option>
+          <option value="desencriptar">Desencriptar</option>
+        </select>
+      </fieldset>
+
+      <!-- Botón -->
+      <fieldset class="grupo">
+        <button id="btn-encriptar" type="submit" title="Haz clic para procesar el archivo">⚙️ Procesar</button>
+      </fieldset>
+    </form>
+
+    <!-- Resultado -->
+    <section class="grupo">
+      <label for="resultado">📄 Resultado:</label>
+      <textarea id="resultado" rows="12" readonly></textarea>
+      <button id="descargar-btn" title="Descargar el archivo generado">💾 Descargar Resultado</button>
+    </section>
+  </main>
+
+  <!-- Librería AES y Base64 -->
+  <script src="libs/crypto-js.min.js"></script>
+
+  <!-- Lógica del encriptador -->
+  <script src="script.js"></script>
+</body>
+</html>
